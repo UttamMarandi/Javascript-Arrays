@@ -1,5 +1,5 @@
 //For in Loops in JS
-
+//for in loops is for objects , for each for aarrays
 let monsters = {
     "Canada" : "Sasquatch" ,
     "Nepal" : "Yeti" ,
