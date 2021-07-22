@@ -1,6 +1,6 @@
 //Every method for arrays
 
-//array ever()
+//array every()
 //every() checks if every element in the array returns true
 //every method takes an anyonyomous function as parameter. This function can take 3 parameters. a. the array element , b. the index of the element, c. the array itself
 
