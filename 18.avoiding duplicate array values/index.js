@@ -2,6 +2,8 @@
 //1.removing duplicate values from the array
 //2. generating an array without duplicates
 
+
+//STRING
 let names = ["John" , "Paul", "Uttam", "Hennesy"]
 
 
@@ -41,6 +43,8 @@ for(let i=0; i<names.length; i++) {
     tempN.splice(rn,1)
 }
 
+
+//NUMBERS
 //given 8 values in array , add 8 more random values and make sure that non of them duplicates
 console.log("given 8 values in array , add 8 more random values and make sure that non of them duplicates");
 let nums = [23,45,74,85,12,90,45,89]
