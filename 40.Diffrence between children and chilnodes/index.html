@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+    <html lang="en">
+      <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Children vs ChildNodes</title>
+        <style>
+          * {
+            box-sizing: border-box;
+          }
+          html {
+            font-size: 20px;
+            font-weight: 300;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+              Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+          }
+        </style>
+      </head>
+      <body>
+        <!-- Do you know where your children are? //comment node-->
+        <header>
+          <h1>children vs childnodes</h1> 
+          <!-- Comment node -->
+          <h2>DOM Scripting</h2>
+        </header>
+        <main>
+          <h1>DOM Stuff</h1>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad veritatis id
+            ratione iste vel voluptatum, aperiam laudantium.
+          </p>
+          <p>
+            Quos earum officiis iure fugiat! Totam cumque incidunt sit, itaque eius
+            culpa id, fuga corrupti voluptas expedita veritatis distinctio ea
+            aliquid sequi?
+          </p>
+        </main>
+
+
+
+        <script>
+            document.addEventListener("DOMContentLoaded", function(){
+                let children = document.body.children //cildren are element nodes
+                let childnodes = document.body.childNodes // childNodes are all nodes - element , text and comments
+
+                //children refers to only the element nodes present in DOM i.e within body tag.
+                //above we have three children 1. header 2. main 3. script tag
+                console.log("children length", children.length);
+                //logs says 4 b.c vs code injects its own child node to run the server
+                //node h2, p, are not childnodes b.c they are not direct children to body tag. they can be grand children or great grand childdren
+
+
+                //childNodes refers to all the nodes inside the body tag icluding element node , text node, comment nodes 
+                console.log("childNodes length" , childnodes.length);
+                //logs 15 which is way more than children nodes
+
+                //iterate through childnode
+                console.log("iterate through childnode ");
+                childnodes.forEach(function(node){
+                    console.log(node); //childNodes are iterable and has a built-in iterable
+                })
+                
+                //iterate through children
+                //children doesn't have an iterator. It's because web page can be dynamic so no. of children can change as well
+
+                //what we can do is use forEach on an empty array 
+                // [].forEach.call(children,(child)=>{  //this code is not working, cannat use forEach on empty array i thinks
+                //     console.log(child);
+                // })
+                
+
+            })
+
+
+        </script>
+        <!-- end of script -->
+      </body>
+    </html>
